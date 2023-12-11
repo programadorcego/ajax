@@ -1,9 +1,10 @@
 document.querySelector(".button").addEventListener("click", () => {
     const request = new XMLHttpRequest();
-    request.open("GET", "http://localhost/programadorcego/javascript/ajax/arquivo.txt", true);
-    request.onreadystatechange = () => {
-        if(request.readyState === 4 && request.status === 200){
-            document.querySelector("#text").textContent = request.response;
+    request.open("GET", "http://localhost/programadorcego/javascript/ajax/dados.json", true);
+    request.onload = () => {
+        if(request.status === 200){
+            const dados = JSON.parse(request.response);
+            console.log(dados.name);
         }
 
         //console.log(request.readyState);
