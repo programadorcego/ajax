@@ -1,4 +1,52 @@
-{
-    "name": "Willian",
-    "email": "willian@email.com"
-}
+[
+  {
+    "id": 1,
+    "name": "João Silva",
+    "email": "joao.silva@email.com"
+  },
+  {
+    "id": 2,
+    "name": "Maria Oliveira",
+    "email": "maria.oliveira@email.com"
+  },
+  {
+    "id": 3,
+    "name": "Carlos Pereira",
+    "email": "carlos.pereira@email.com"
+  },
+  {
+    "id": 4,
+    "name": "Ana Souza",
+    "email": "ana.souza@email.com"
+  },
+  {
+    "id": 5,
+    "name": "Rodrigo Santos",
+    "email": "rodrigo.santos@email.com"
+  },
+  {
+    "id": 6,
+    "name": "Laura Costa",
+    "email": "laura.costa@email.com"
+  },
+  {
+    "id": 7,
+    "name": "Felipe Martins",
+    "email": "felipe.martins@email.com"
+  },
+  {
+    "id": 8,
+    "name": "Mariana Lima",
+    "email": "mariana.lima@email.com"
+  },
+  {
+    "id": 9,
+    "name": "Ricardo Ferreira",
+    "email": "ricardo.ferreira@email.com"
+  },
+  {
+    "id": 10,
+    "name": "Camila Rocha",
+    "email": "camila.rocha@email.com"
+  }
+]
