@@ -1,7 +1,16 @@
-document.querySelector(".button").addEventListener("click", () => {
-    let promessa = new Promise((resolve, reject) => {
-        setTimeout(() => resolve("Olá, mundo!"), 10000);
+async function minhaFuncao() {
+    return "Olá mundo!";
+}
+
+async function funcao2() {
+    let promessa = new Promise(resolve => {
+        resolve("Olá, mundo!");
     });
 
-    console.log(promessa);
+    document.querySelector("#text").textContent = await promessa;
+}
+
+document.querySelector(".button").addEventListener("click", () => {
+    //minhaFuncao().then(resultado => console.log(resultado));
+    funcao2();
 });
