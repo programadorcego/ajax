@@ -1,16 +1,33 @@
-async function minhaFuncao() {
-    return "Olá mundo!";
+function funcao1() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            console.log(`Fim da função 1`);
+            return resolve("Resultado da função 1");
+        }, 5000);
+    });
 }
 
-async function funcao2() {
-    let promessa = new Promise(resolve => {
-        resolve("Olá, mundo!");
+function funcao2(param) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            console.log(`Fim da função 2 com parâmetro: ${param}`);
+            return resolve("Resultado da função 2");
+        }, 5000);
     });
+}
 
-    document.querySelector("#text").textContent = await promessa;
+function funcao3(param) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            console.log(`Fim da função 3 com parâmetro: ${param}`);
+            return resolve("Resultado da função 3");
+        }, 5000);
+    });
 }
 
 document.querySelector(".button").addEventListener("click", () => {
-    //minhaFuncao().then(resultado => console.log(resultado));
-    funcao2();
+funcao1()
+.then(resultado1 => funcao2(resultado1))
+.then(resultado2 => funcao3(resultado2))
+.then(resultado3 => console.log(resultado3));
 });
