@@ -1,33 +1,18 @@
-function funcao1() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            console.log(`Fim da função 1`);
-            return resolve("Resultado da função 1");
-        }, 5000);
-    });
-}
+function promessa() {
+    return new Promise((resolve, reject) => {
+        let numero = Math.floor(Math.random() * (11 - 1)) + 1;
 
-function funcao2(param) {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            console.log(`Fim da função 2 com parâmetro: ${param}`);
-            return resolve("Resultado da função 2");
-        }, 5000);
-    });
-}
+        if(numero % 2 == 1) return reject(`Erro! O número ${numero} é ímpar.`);
 
-function funcao3(param) {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            console.log(`Fim da função 3 com parâmetro: ${param}`);
-            return resolve("Resultado da função 3");
-        }, 5000);
+        return resolve(`O número ${numero} é par.`);
     });
 }
 
 document.querySelector(".button").addEventListener("click", () => {
-funcao1()
-.then(resultado1 => funcao2(resultado1))
-.then(resultado2 => funcao3(resultado2))
-.then(resultado3 => console.log(resultado3));
+console.clear();
+
+    promessa()
+.then(resultado => console.log(resultado))
+.catch(erro => console.error(erro))
+.finally(() => console.log("Fim da Promise"));
 });
